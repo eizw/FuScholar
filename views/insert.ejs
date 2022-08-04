@@ -1,0 +1,52 @@
+<%- include('partials/head') %>
+
+    <!-- <script>
+        const uni = document.querySelector('#uniButton');
+        const sch = document.querySelector('#schButton');
+        const uniForm = document.querySelector("#uniForm");
+        const schForm = document.querySelector
+
+        uni.addEventListener("click", {
+            
+        })
+    </script> -->
+    
+<%- include('partials/neck') %>
+
+    <%- include('partials/navbar') %>
+       
+    <!-- <ul>
+        <li><button id="uniButton">Register University</button></li>
+        <li><button id="schButton">Register Scholarship</button></li>
+    </ul> -->
+    
+    <!-- university form -->
+
+    <div>
+        <h1>New University</h1>
+        <form action="/:uni" method="POST">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="university name">
+            <label for="ranking">Ranking</label>
+            <input type="number" id="ranking" placeholder="university ranking">
+            <label for=""></label>
+            <button type="submit">Submit</button>
+        </form>
+    </div>  
+
+    <!-- scholarship form -->
+
+    <div>
+        <h1>New Scholarship</h1>
+        <form action="/:sch" method="POST">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="university name">
+            <label for="ranking">Ranking</label>
+            <input type="number" id="ranking" placeholder="university ranking">
+            <label for=""></label>
+            <button type="submit">Submit</button>
+        </form>
+    </div>  
+
+</body>
+</html>

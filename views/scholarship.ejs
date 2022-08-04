@@ -1,0 +1,50 @@
+<%- include('partials/head') %>
+</head>
+
+<body class="bg-dark" style="color: white;">
+    
+    <%- include('partials/navbar') %>
+    <div class="container">
+        <h1><%= scholarships.name %></h1>
+        <p><%= scholarships.location %></p>
+        <!-- IF there is an opening date -->
+        <% if (scholarships.date.opening !== "" || scholarships.date.opening) { %>
+            <!-- IF the opening date is TBD -->
+            <% if (scholarships.date.opening === "TBD") { %>
+                <h3>Opening Date: To be determined</h3>
+                <!-- IF there's a closing date -->
+                <% if (scholarships.date.closing !== "TBD" || scholarships.date.closing !== "") { %>
+                    <h3>Closing Date: <%= scholarships.date.opening %></h3>
+                <% } %>
+            <!-- IF the opening date is FINAL -->
+            <% } else { %>
+                <h3>Opening Date: <%= scholarships.date.opening %></h3>
+            <% } %>
+        <% } else { %>
+            <h3>Closing Date: <%= scholarships.date.closing %></h3>
+        <% } %>
+
+        <h4>Academic Requirements:</h4>
+        <ul>
+            <% for (i = 0; i < scholarships.acadReq.length; i++) { %>
+                <li>
+                    <%= scholarships.acadReq[i] %>
+                </li>
+            <% } %>
+        </ul>
+        <h4>Other Requirements:</h4>
+        <ul>
+            <% for (i = 0; i < scholarships.longReq.length; i++) { %>
+                <li>
+                    <%= scholarships.longReq[i] %>
+                </li>
+            <% } %>
+        </ul>
+
+        <a href="<%= scholarships.applink %>">APPLY NOW!</a>
+    </div>
+
+    <%- include('partials/butt') %>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<%- include('partials/head') %>
+</head>
+
+<body class="bg-dark" style="color: white;">
+    <%- include('partials/navbar') %>
+    <div class="container">
+        <h1><%= universities.name %></h1>
+        <p><%= universities.location.state + "\n" %><br><%- universities.location.address.split(",").join("<br />") %></p>
+        <h3>Intake: <%- universities.date %></h3>
+
+        <p>
+            <%- universities.desc %>
+        </p>
+
+        <h4>Courses</h4>
+        <ul>
+            <% for (i = 0; i < universities.course.length; i++) { %>
+                <li>
+                    <%- universities.course[i] %>
+                </li>
+            <% } %>
+        </ul>
+
+        <a href="<%= universities.applink %>">APPLY NOW!</a>
+    </div>
+
+    <%- include('partials/butt') %>
+</body>
+</html>

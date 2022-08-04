@@ -1,0 +1,48 @@
+    for (let i = 0; i < 6; i++) {
+        const currentData = scholarship[i];
+        const newSch = new Scholarship({
+            name : '${currentData.name}',
+                location : '${currentData.location}',
+                date: {
+                    opening: '${currentData.date.opening}',
+                    closing: '${currentData.data.closing}'
+                },
+                
+                age: '${currentData.age}',
+
+                acadReq: '${currentData.acadReq}',
+                longReq: '${currentData.longReq}',
+
+                allowance: '${currentData.allowance}',
+
+                bond: '${currentData.bond}',
+
+                applink: '${currentData.applink}'
+        });
+        await newSch.save();
+    }
+
+    for (let i = 0; i < 6; i++) {
+        const currentData = university[i];
+        const newUni = new University({
+            name: '${currentData}',
+            ranking: '${currentData.ranking}',
+            degree: '${currentData.degree}',
+            public: '${currentData.public}',
+
+            country: '${currentData.country}',
+            location: {
+                state: '${currentData.location.state}',
+                address: '${currentData.location.address}'
+            },
+
+            date: '${currentData.date}',
+
+            desc: '${currentData.desc}',
+
+            course: '${currentData.course}',
+
+            applink: '${currentData.applink}'
+        });
+        await newUni.save()
+    }

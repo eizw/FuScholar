@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&display=swap');
+
+
+
+/* ------------home----------- */
+
+.bg-fudark {
+    background-color: rgb(37, 37, 37);
+}
+
+#homecontainer {
+    height: 315px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/img/home.jpg");
+    background-size: cover;
+    background-position: center;
+    
+    font-family: 'Inconsolata', monospace;
+    text-shadow: 1px 1px black;
+
+    text-align: center;
+    align-items: center;
+
+}
+
+#hometext {
+    margin: 0;
+    padding-top: 50px;
+}
+
+/* home cards */
+
+.col {
+    display: flex;
+
+}
+
+.card {
+    flex: 1;
+    box-sizing: content-box;
+    border-radius: 0%;
+    width: 100%;
+}
+
+.card-body {
+    height: 100%;
+    width: 100%;
+}
+
+.card-text {
+    text-align: left;
+}
+
+.card-img-left {
+    max-width: 100%;
+    height: 129.16px;
+}
+
+.card-img-right {
+    width: 100%;
+    height: 100%;
+}
+
+.p-cut {
+    /* display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100em; */
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px; /* fallback */
+    max-height: 64px; /* fallback */
+    -webkit-line-clamp: 4
+}
+
+.ranking {
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;
+    align-items: center;
+    font-size: 3vw;
+    color: white;
+}
+
+.Malaysia {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/img/Malaysia.png");
+}
+
+.Singapore {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/img/Singapore.png");
+}
+
+.date {
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+/* butt */

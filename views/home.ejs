@@ -1,0 +1,151 @@
+<%- include('partials/head') %>
+
+</head>
+
+<body class="h-100 bg-dark">
+    <%- include('partials/navbar') %>
+
+    <div id="homecontainer" class="text-white">
+        <div id="hometext">
+            <h1 style="font-size: 100px">FuScholar</h1>
+            <h3>Index of Scholarships and Universities hosting Computer Science courses</h3>
+        </div>
+    </div>
+
+    <p></p>
+    
+    <div class="container">
+      <div class="row bg-fudark mb-3 text-white">
+        <div class="col-4">
+          <p>col-4</p>
+        </div>
+        <div class="col-8">
+          <button onclick="sortListByName()">Name</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 align-self-start text-white">
+          <form class="">
+            <input class="form-control me-2" type="search" placeholder="UKM, Singapore, etc..." aria-label="Search">
+            <p></p>
+            <button class="btn btn-outline-success" style="display: block;" type="submit">Search</button>
+            <p>Sort by:</p>
+            <ul>
+              <li>
+                <input type="checkbox">
+                <label for="closing_date">Closing date</label>
+              </li>
+              <li>
+                <input type="checkbox">
+                <label for="opening_date">Opening date</label>
+              </li>
+            </ul>
+          </form>
+        </div>
+
+        <div class="col-9">
+          <ul id="index-list">
+            <% for (i = 0; i < scholarships.length; i++) { %>
+            <li class="fu-list">
+              <div class="container card-container">
+                <div class="row">
+                  <div class="col-2 col" style="padding: 0">
+                    <img onclick="location.href = '/sch/<%=scholarships[i].name%>/<%=scholarships[i]._id%>';" src="/img/home.jpg" class="card-img-left mb-3">
+                  </div>
+                  <div class="col-8 col" style="padding: 0">
+                    <div class="card mb-3">
+                      <div class="card-body">
+                        <h5 href="/" class="card-title fu-name"><a href="/sch/<%=scholarships[i].name%>/<%=scholarships[i]._id%>"><%- scholarships[i].name %> Scholarship</a></h5>
+                        <ul>
+                          <li><%- scholarships[i].degree %> | <%- scholarships[i].grad %></li>
+                          <li><%- scholarships[i].location %></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 col">
+                    <div class="date">
+                      <h5>Until:</h5>
+                      <p><%- scholarships[i].date.closing %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <% } %>
+            <% for (i = 0; i < universities.length; i++) { %>
+            <li class="fu-list">
+              <div class="container card-container">
+                <div class="row">
+                  <div class="col-2 col" style="padding: 0">
+                    <img onclick="location.href = '/sch/<%=universities[i].name%>/<%=universities[i]._id%>';" src="/img/home.jpg" class="card-img-left mb-3">
+                  </div>
+                  <div class="col-8 col" style="padding: 0">
+                    <div class="card mb-3">
+                      <div class="card-body">
+                        <h5 href="/" class="card-title fu-name"><a href="/uni/<%=universities[i].name%>/<%=universities[i]._id%>"><%- universities[i].name %></a></h5>
+                        <p class="card-text text-break p-cut"><%- universities[i].desc %></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 col mb-3 ranking <%=universities[i].country%>">
+                    <p class="m-3" style="text-align: center;">#<%- universities[i].ranking %></p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+
+      <!-- <div class="col-9">
+        <table class="sortable text-white">
+          <thead>
+            <tr>
+              <td>Name</td>
+              <td>Education</td>
+              <td>Closing Date</td>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (i = 0; i < scholarships.length; i++) { %>
+              <tr>
+                <td><%= scholarships[i].name %></td>
+                <td><%= scholarships[i].grad %></td>
+                <td><%= scholarships[i].date.closing %></td>
+              </tr>
+            <% } %>
+          </tbody>
+
+            
+          </table>
+          <p><br></p>
+          <table class="sortable text-white">
+            <thead>
+              <tr>
+                <td>Name</td>
+                <td>Country</td>
+                <td>Ranking</td>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (i = 0; i < universities.length; i++) { %>
+                <tr>
+                  <td><%= universities[i].name %></td>
+                  <td><%= universities[i].country %></td>
+                  <td>#<%= universities[i].ranking %></td>
+                </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div> -->
+      </div>
+    </div>
+
+        
+       
+
+
+    <%- include('partials/butt') %>
+</body>
+</html>
