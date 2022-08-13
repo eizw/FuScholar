@@ -12,10 +12,9 @@ const Scholarship = require("./scholarship");
 const async = require('async');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-mongoose.connect('mongodb://localhost:27017/fuscholar', {
+mongoose.createConnection('mongodb://localhost:27017/fuscholar', {
     useNewUrlParser: true, 
     useUnifiedTopology: true,
-    useCreateIndex: true    
 })
 
 const db = mongoose.connection;
